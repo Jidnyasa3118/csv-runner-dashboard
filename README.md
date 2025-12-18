@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CSV Runner Dashboard : 
 Build a dashboard where users can upload a CSV file containing running data and view analytics, metrics, and visualizations.
 
@@ -135,3 +136,7 @@ Mobile-friendly design
 //Conclusion
 
 This project successfully fulfills the challenge requirements by delivering a clean, accessible, and functional CSV analytics dashboard with clear data insights, professional UI, and extensible architecture.
+=======
+# csv-runner-dashboard
+CSV Runner Analytics Dashboard built with Next.js and shadcn/ui
+>>>>>>> 22dc0b95348e44afde70db3f5575b1ec16e2a893
