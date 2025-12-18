@@ -133,6 +133,21 @@ Card-based layout for clarity
 
 Mobile-friendly design
 
+## Screenshots
+
+### Dashboard Overview
+![Dashboard](assets/dashboard.png)
+
+### Metrics Section
+![Metrics](assets/metrics.png)
+
+### Charts Section
+![Charts](assets/chart.png)
+
+### CSV Upload
+![CSV Upload](assets/csv-upload.png)
+
+
 //Conclusion
 
 This project successfully fulfills the challenge requirements by delivering a clean, accessible, and functional CSV analytics dashboard with clear data insights, professional UI, and extensible architecture.
