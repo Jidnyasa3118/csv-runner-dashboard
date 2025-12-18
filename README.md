@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+CSV Runner Dashboard : 
+Build a dashboard where users can upload a CSV file containing running data and view analytics, metrics, and visualizations.
 
-## Getting Started
+//What I Built :
+1.I developed a CSV Runner Analytics Dashboard using Next.js (App Router) that allows users to:
+2.Upload a CSV file with running data
+3.Preview uploaded data in a table
+4.Filter data by runner
+5.View performance metrics (average, minimum, maximum miles)
+6.Analyze data using multiple interactive charts
+7.The application focuses on data validation, usability, accessibility, and clear data visualization.
 
-First, run the development server:
+//Assumptions :
+The following assumptions were made during implementation:
+The CSV file must contain exactly these headers:date, person, miles
+date is treated as a string and used only for chart labeling (no timezone manipulation).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+miles is assumed to be a numeric value (float or integer).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+No authentication is required since the challenge focuses on data visualization.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The CSV file is processed entirely client-side for simplicity and speed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The dashboard supports small to medium CSV files (large enterprise-scale files are out of scope).
 
-## Learn More
+//Prerequisites :
+Before running the project, ensure you have the following installed:
+Node.js: v18.x or higher
+npm: v9+
+A modern browser (Chrome, Edge, Firefox)
+No database or external services are required.
 
-To learn more about Next.js, take a look at the following resources:
+// Setup Instructions
+1.Install Dependencies
+npm install
+2.Environment Variables
+This project does not require environment variables.
+A .env.example file is not needed because:No authentication,No external APIs,No database connections
+3.Sample CSV File
+Use this file to test all features.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+// Run & Verify
+Run the Application- npm run dev
+Open your browser and go to: http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ Step-by-Step Verification (Acceptance Checklist)
+✅ Upload CSV
+Click Upload CSV
+Select a valid CSV file
+App validates headers and loads data
+✅ CSV Preview Table
+Displays first few rows of uploaded CSV
+Confirms correct parsing
+✅ Metrics
+Average miles
+Minimum miles
+Maximum miles
+Metrics update dynamically when filtering by runner
+✅ Person Filter
+Dropdown to select All or individual runners
+All charts and metrics update accordingly
+✅ Visualizations
+Line chart showing miles over time
+Bar chart showing total miles per runner
+Area chart showing overall running trend
+Pie chart showing mileage contribution by runner
+All charts include:
+Clear axis labels
+Tooltips with units (miles)
+Responsive design
 
-## Deploy on Vercel
+//Features & Limitations
+//Features
+CSV upload and parsing
+Header and type validation
+CSV preview table
+Runner-wise filtering
+Overall and per-person metrics
+Multiple responsive charts
+Clean, modern UI using shadcn/ui
+Fully client-side processing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+//Limitations
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+No persistent storage (data resets on refresh)
+No CSV export functionality
+Very large CSV files may impact performance
+No date aggregation (weekly/monthly)
+Future Improvements
+Weekly/monthly aggregation toggle
+Export charts as images or PDF
+Dark mode toggle
+Support for kilometers ↔ miles conversion
+Performance optimization for very large datasets
+
+//Notes on Architecture
+Folder Structure
+app/
+ └── page.tsx        # Main dashboard page
+components/
+ ├── CsvUploader.tsx
+ ├── CsvPreviewTable.tsx
+ ├── PersonFilter.tsx
+ ├── MetricsCards.tsx
+ ├── RunnerChart.tsx
+ ├── RunnerBarChart.tsx
+ ├── RunnerAreaChart.tsx
+ └── RunnerPieChart.tsx
+lib/
+ └── metrics.ts      # Metric calculations
+
+//Key Components
+1.CsvUploader
+Handles file upload, parsing, and validation.
+
+2.MetricsCards
+Displays calculated metrics using reusable cards.
+
+3.Charts (Recharts)
+Modular chart components for maintainability.
+
+
+//UI & Design
+
+shadcn/ui components for consistency
+
+Responsive layouts using Tailwind CSS
+
+Proper spacing and typography hierarchy
+
+Card-based layout for clarity
+
+Mobile-friendly design
+
+//Conclusion
+
+This project successfully fulfills the challenge requirements by delivering a clean, accessible, and functional CSV analytics dashboard with clear data insights, professional UI, and extensible architecture.
