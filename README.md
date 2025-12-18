@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 CSV Runner Dashboard : 
 Build a dashboard where users can upload a CSV file containing running data and view analytics, metrics, and visualizations.
 
